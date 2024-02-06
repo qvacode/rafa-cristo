@@ -1,0 +1,91 @@
+<nav class="fixed top-0 bg-black/30 backdrop-blur-md w-screen z-20">
+    <div class="flex justify-between items-center py-3 px-3 md:px-0 m-auto md:w-[95%] lg:w-[90%] xl:w-[80%]">
+        <img src="https://res.cloudinary.com/dlwhh53by/image/upload/v1706248655/rafa/d7pwpzev4fnk8t17uqtj.png" alt="Rafael Cristo Logo" class="w-12 lg:w-16">
+        <ul class="hidden md:flex gap-5 text-white font-semibold">
+            <li>
+                <a href="#hero">Inicio</a>
+            </li>
+            <li>
+                <a href="#about">Sobre mi</a>
+            </li>
+            <li>
+                <a href="#courses">Cursos</a>
+            </li>
+            <li>
+                <a href="#blog">Blog</a>
+            </li>
+            <li>
+                <a href="#store">Tienda</a>
+            </li>
+            <li>
+                <a href="#contact">Contacto</a>
+            </li>
+        </ul>
+        <div class="flex gap-3 items-center">            
+            <button class="flex gap-3 py-2 px-4 bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-indigo-600 hover:to-sky-600 rounded-tr-md rounded-bl-md items-center">
+                <img src="/icons/podcast.svg" alt="Podcast Rafael Cristo Logo" class="w-8 lg:w-10">
+                <p class="text-white font-semibold">Podcast</p>
+            </button>
+            <button id="open-menu">
+                <img src="/icons/menu.svg" alt="Menu Lateral" class="w-8 block md:hidden">
+            </button>
+        </div>
+    </div>
+    <div id="movile-menu" class="hidden md:hidden absolute inset-0 h-[400px] w-screen bg-slate-900/90">
+        <div class="flex flex-col">
+            <button id="close-menu">
+                <img src="/icons/close.svg" alt="Close movile menu" class="w-10 ml-4 mt-4">
+            </button>
+
+            <div class="flex flex-col mx-auto my-auto">
+                <ul id="ul-movile" class="flex flex-col justify-center gap-5 text-white text-3xl font-bold">
+                    <li>
+                        <a href="#hero">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#about">Sobre mi</a>
+                    </li>
+                    <li>
+                        <a href="#courses">Cursos</a>
+                    </li>
+                    <li>
+                        <a href="#blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#store">Tienda</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const openMenu = document.getElementById('open-menu')
+    const closeMenu = document.getElementById('close-menu')
+    const menu = document.getElementById('movile-menu')
+    const ulMovile = document.querySelectorAll('li')
+
+    openMenu?.addEventListener('click', () => {
+        menu?.classList.remove('hidden')
+    })
+
+    closeMenu?.addEventListener('click', () => {
+        menu?.classList.add('hidden')
+    })
+    
+    ulMovile.forEach(el => {
+        el.addEventListener('click', () => {
+            menu?.classList.add('hidden')
+        })
+    })
+</script>
+
+<style>
+    li :hover{
+        color: #81d6f9;
+    }
+</style>

@@ -1,0 +1,20 @@
+---
+interface Props {
+    image: string
+    date: string
+    title: string
+}
+
+const { date, image, title } = Astro.props
+---
+
+<div class="felx flex-col bg-gradient-to-t from-sky-600 to-transparent rounded-3xl carousel-slide">
+    <div class="flex justify-between flex-col">
+        <img src={image} alt="Eventos de Rafael Cristo" class="object-cover">
+        <p class="py-4 px-2 text-slate-900 font-semibold ml-8 text-lg -mt-24 bg-white/30 backdrop-blur-sm w-2/3 rounded-md">Fecha: { date }</p>
+    </div>
+    <p class="text-xl font-semibold ml-8 text-white py-8">
+        {title}
+    </p>
+</div>
+

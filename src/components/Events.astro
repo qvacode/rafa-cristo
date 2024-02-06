@@ -1,0 +1,69 @@
+---
+import EventCard from "./EventCard.astro";
+---
+
+<section id="events" class="flex flex-col px-4 lg:px-24 py-12">
+    <div class="flex flex-col gap-2">
+        <h2 class="text-4xl lg:text-6xl font-bold text-gray-900 uppercase">Póximos eventos</h2>
+        <blockquote class="text-xl italic font-semibold text-gray-900">
+            <img src="/icons/quote.svg" alt="Quote icon" class="w-4">
+            <p>No te pierdas los eventos que tenemos preparados</p>
+        </blockquote>
+    </div>
+    <div class="overflow-x-hidden">
+        <div class="carousel-track whitespace-nowrap gap-4">
+            <EventCard image="https://res.cloudinary.com/dlwhh53by/image/upload/v1706248658/rafa/tqa8umgogrlemusg44ak.png" date="4 de febrero AHS - Holguin" title="Taller presencial bienestar emocional" />
+            <EventCard image="https://res.cloudinary.com/dlwhh53by/image/upload/v1706248658/rafa/tqa8umgogrlemusg44ak.png" date="4 de febrero AHS - Holguin" title="Taller presencial bienestar emocional" />
+            <EventCard image="https://res.cloudinary.com/dlwhh53by/image/upload/v1706248658/rafa/tqa8umgogrlemusg44ak.png" date="4 de febrero AHS - Holguin" title="Taller presencial bienestar emocional" />
+            <EventCard image="https://res.cloudinary.com/dlwhh53by/image/upload/v1706248658/rafa/tqa8umgogrlemusg44ak.png" date="4 de febrero AHS - Holguin" title="Taller presencial bienestar emocional" />
+            <EventCard image="https://res.cloudinary.com/dlwhh53by/image/upload/v1706248658/rafa/tqa8umgogrlemusg44ak.png" date="4 de febrero AHS - Holguin" title="Taller presencial bienestar emocional" />
+            <EventCard image="https://res.cloudinary.com/dlwhh53by/image/upload/v1706248658/rafa/tqa8umgogrlemusg44ak.png" date="4 de febrero AHS - Holguin" title="Taller presencial bienestar emocional" />           
+        </div>
+    </div>
+</section>
+
+<style>
+    .carousel-track {
+        display: flex;
+        animation: scroll 25s linear infinite;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(-15%);
+        }
+        100% {
+            transform: translateX(-110%); /* Ajusta este valor según el número de slides */
+        }
+    }
+    
+    @media (max-width: 1040px) {
+        .carousel-slide {
+            width: 50%;
+            flex: 0 0 auto;
+            margin: 16px;
+        }
+    }
+    
+    @media (max-width: 720px) {
+        .carousel-slide {
+            width: 80%;
+            flex: 0 0 auto;
+            margin: 16px;
+        }
+        .carousel-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-500%); /* Ajusta este valor según el número de slides */
+            }
+        }
+    }
+
+
+</style>
